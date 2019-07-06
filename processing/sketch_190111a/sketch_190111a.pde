@@ -1,0 +1,86 @@
+import ddf.minim.*;
+Minim minim;
+AudioPlayer player;
+void setup(){
+  size(600,600);
+  minim=new Minim(this);
+  player=minim.loadFile("Axero - River (Original Mix).mp3");
+  player.play();
+
+}
+void draw(){
+  background(0);
+  stroke(random(255),random(255),random(255));
+  fill(0);
+  for(int i=0;i<player.bufferSize()-1;i+=8){
+    strokeWeight(abs(player.left.get(i)*20));
+    ellipse(i+100,i,50,50);
+    rect(i,i,60,60);
+    ellipse(i-100,i,50,50);
+    ellipse(450,150,100,100);
+    ellipse(150,450,100,100);
+    line(450,150,random(350,550),random(50,250));
+    line(150,450,random(50,250),random(350,550));
+    rect(550,30,30,10);
+    rect(550,45,30,10);
+    rect(550,60,30,10);
+    rect(550,75,30,10);
+    beginShape();
+    vertex(50,535);
+    vertex(50,565);
+    vertex(65,580);
+    vertex(115,580);
+    vertex(185,520);
+    vertex(235,520);
+    vertex(250,535);
+    vertex(250,565);
+    vertex(235,580);
+    vertex(185,580);
+    vertex(115,520);
+    vertex(65,520);
+    vertex(50,535);
+    endShape();
+    triangle(425,167,475,167,450,117);
+    triangle(125,430,175,430,150,480);
+    point(i+300,i);
+    point(i+175,i);
+    point(i+200,i);
+    point(i+225,i);
+    point(i+250,i);
+    point(i+275,i);
+    point(i+325,i);
+    point(i+350,i);
+    point(i+225,i);
+    point(i+375,i);
+    point(i+400,i);
+    point(i+425,i);
+    point(i+450,i);
+    point(i+475,i);
+    point(i+500,i);
+    point(i+525,i);
+    point(i+550,i);
+    point(i+575,i);
+    point(i+600,i);
+    point(i,i+175);
+    point(i,i+200);
+    point(i,i+225);
+    point(i,i+250);
+    point(i,i+275);
+    point(i,i+300);
+    point(i,i+325);
+    point(i,i+350);
+    point(i,i+375);
+    point(i,i+400);
+    point(i,i+425);
+    point(i,i+450);
+    point(i,i+475);
+    point(i,i+500);
+    point(i,i+525);
+    point(i,i+550);
+    point(i,i+575);
+    point(i,i+600);
+    line(0,0,600,600);
+    line(0,0,random(mouseX-1000,mouseX+1000),random(mouseY-1000,mouseY+1000));
+    //line(mouseX,mouseY,random(mouseX-1000,mouseX+1000),random(mouseY-1000,mouseY+1000));
+}
+}
